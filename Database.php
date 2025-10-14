@@ -4,7 +4,7 @@ class Database {
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = 'hhaTg&76VQzy') 
+    public function __construct($config, $username = 'root', $password = 'hhaTg&76VQzy') // this is a local dev db so the pw doesn't matter!
         {
             $dsn = 'mysql:' . http_build_query($config,'',';'); // data source name
 
