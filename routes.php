@@ -1,10 +1,15 @@
 <?php
 
-return [
-    '/' => 'controllers/index.php',
-    '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/notes.php',
-    '/note' => 'controllers/note.php',
-    '/notes/create' => 'controllers/note-create.php',
-    '/contact' => 'controllers/contact.php'
-];
+$router->get('/', 'controllers/index.php');
+$router->get('/about', 'controllers/about.php');
+$router->get('/contact', 'controllers/contact.php');
+
+$router->get('/notes', 'controllers/notes/index.php');
+$router->post('/notes', 'controllers/notes/store.php');
+
+$router->get('/note', 'controllers/notes/show.php');
+$router->patch('/note', 'controllers/notes/update.php');
+$router->delete('/note', 'controllers/notes/destroy.php');
+
+$router->get('/note/edit', 'controllers/notes/edit.php');
+$router->get('/notes/create', 'controllers/notes/create.php');
