@@ -24,7 +24,12 @@ class Authenticator
 
     
     public function login($user) {
+        $db = App::resolve(Database::class);
+
+        $current_user = $db->query('select * from users where email = ?', [$user['email']])->findOrFail();
+
         $_SESSION['user'] = [
+            'cuid' => $current_user['idusers'],
             'email' => $user['email']
         ];
 
