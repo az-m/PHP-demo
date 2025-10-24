@@ -11,16 +11,26 @@
                     <form action="/register" method="POST" class="space-y-6">
                         <div>
                             <div class="mt-2">
-                                <input id="email" type="email" name="email" required placeholder="joe@joe.com" class="block w-full rounded-t-md bg-yellow-100 px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 border-gray-300 border-b-0" />
-                                <input id="password" type="password" name="password" required class="block w-full rounded-b-md bg-yellow-100 px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 border-gray-300" />
+                                <input id="email" 
+                                    type="email" 
+                                    name="email" 
+                                    required
+                                    placeholder="joe@joe.com" 
+                                    class="block w-full rounded-t-md bg-yellow-100 px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 border-gray-300 border-b-0"
+                                    value="<?= old('email')?>" />
+                                <input id="password" 
+                                    type="password" 
+                                    name="password" 
+                                    required 
+                                    class="block w-full rounded-b-md bg-yellow-100 px-3 py-1.5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 border-gray-300" />
                                 <?php if (isset($errors['email'])) : ?>
-                                    <p class="text-red-500 text-sm mt-3"><?= $errors['email'] ?>
+                                    <p class="text-red-500 text-sm mt-3"><?= $errors['email'] ?></p>
                                 <?php endif ?>
                                 <?php if (isset($errors['password'])) : ?>
-                                    <p class="text-red-500 text-sm mt-3"><?= $errors['password'] ?>
+                                    <p class="text-red-500 text-sm mt-3"><?= $errors['password'] ?></p>
                                 <?php endif ?>
                             </div>
-                             
+                            
                         </div>
                         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Register</button>
 
